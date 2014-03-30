@@ -1,0 +1,47 @@
+{
+  "name": "crc32-stream",
+  "version": "0.1.0",
+  "description": "a streaming CRC32 checksumer",
+  "homepage": "https://github.com/ctalkington/node-crc32-stream",
+  "author": {
+    "name": "Chris Talkington",
+    "url": "http://christalkington.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ctalkington/node-crc32-stream.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ctalkington/node-crc32-stream/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/ctalkington/node-crc32-stream/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/crc32-stream.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "mocha --reporter dot"
+  },
+  "dependencies": {
+    "readable-stream": "~1.0.24",
+    "lodash.defaults": "~2.4.1",
+    "buffer-crc32": "~0.2.1"
+  },
+  "devDependencies": {
+    "chai": "~1.8.1",
+    "mocha": "~1.16.0",
+    "rimraf": "~2.2.0",
+    "mkdirp": "~0.3.5"
+  },
+  "keywords": [
+    "crc32-stream",
+    "crc32",
+    "stream",
+    "checksum"
+  ]
+}
