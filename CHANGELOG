@@ -1,3 +1,8 @@
+v0.1.1:
+  date: 2014-03-30
+  changes:
+    - gracefully handle "no data" scenario.
+    - trim down deps.
 v0.1.0:
   date: 2014-03-30
   changes:
