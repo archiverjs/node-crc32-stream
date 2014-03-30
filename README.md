@@ -38,11 +38,11 @@ Inherits [Transform Stream](http://nodejs.org/api/stream.html#stream_class_strea
 
 #### digest()
 
-Return the checksum digest in unsigned form.
+Returns the checksum digest in unsigned form.
 
 #### hex()
 
-Return the hex representation of the checksum digest. (ie E81722F0)
+Returns the hexadecimal representation of the checksum digest. (ie E81722F0)
 
 ### Instance Options
 
