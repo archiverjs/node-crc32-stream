@@ -15,10 +15,10 @@ You can also use `npm install https://github.com/ctalkington/node-crc32-stream/a
 ### Usage
 
 ```js
-var CRC32Steam = require('crc32-stream');
+var CRC32Stream = require('crc32-stream');
 
 var source = fs.createReadStream('file.txt');
-var checksum = new CRC32Steam();
+var checksum = new CRC32Stream();
 
 checksum.on('end', function(err) {
   // do something with checksum.digest() here
