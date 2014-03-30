@@ -29,14 +29,11 @@
   },
   "dependencies": {
     "readable-stream": "~1.0.24",
-    "lodash.defaults": "~2.4.1",
     "buffer-crc32": "~0.2.1"
   },
   "devDependencies": {
     "chai": "~1.8.1",
-    "mocha": "~1.16.0",
-    "rimraf": "~2.2.0",
-    "mkdirp": "~0.3.5"
+    "mocha": "~1.16.0"
   },
   "keywords": [
     "crc32-stream",
