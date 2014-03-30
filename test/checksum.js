@@ -22,4 +22,17 @@ describe('CRC32Stream', function() {
     checksum.pipe(deadend);
     binary.pipe(checksum);
   });
+
+  it('should gracefully handle having no data chunks passed to it', function(done) {
+    var checksum = new CRC32Stream();
+    var deadend = new DeadEndStream();
+
+    checksum.on('end', function() {
+      assert.equal(checksum.digest(), 0);
+      done();
+    });
+
+    checksum.pipe(deadend);
+    checksum.end();
+  });
 });
