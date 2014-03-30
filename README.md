@@ -1,6 +1,6 @@
 # crc32-stream v0.2.3 [![Build Status](https://travis-ci.org/ctalkington/node-crc32-stream.svg?branch=master)](https://travis-ci.org/ctalkington/node-crc32-stream)
 
-crc32-stream is a streaming crc32 checksumer. It uses [buffer-crc32](https://www.npmjs.org/package/buffer-crc32) behind the scenes to reliably handle binary data and fancy character sets. Data is passed through untouched.
+crc32-stream is a streaming CRC32 checksumer. It uses [buffer-crc32](https://www.npmjs.org/package/buffer-crc32) behind the scenes to reliably handle binary data and fancy character sets. Data is passed through untouched.
 
 [![NPM](https://nodei.co/npm/crc32-stream.png)](https://nodei.co/npm/crc32-stream/)
 
