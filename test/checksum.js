@@ -16,6 +16,7 @@ describe('CRC32Stream', function() {
     checksum.on('end', function() {
       assert.equal(checksum.digest(), 3893830384);
       assert.equal(checksum.hex(), 'E81722F0');
+      assert.equal(checksum.size(), 16384);
       done();
     });
 

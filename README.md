@@ -44,6 +44,10 @@ Returns the checksum digest in unsigned form.
 
 Returns the hexadecimal representation of the checksum digest. (ie E81722F0)
 
+#### size()
+
+Returns the raw size/length of passed-through data.
+
 ### Instance Options
 
 Inherits [Transform Stream](http://nodejs.org/api/stream.html#stream_class_stream_transform) options.
