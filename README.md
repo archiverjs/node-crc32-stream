@@ -14,6 +14,10 @@ You can also use `npm install https://github.com/ctalkington/node-crc32-stream/a
 
 ### Usage
 
+#### CRC32Stream
+
+Inherits [Transform Stream](http://nodejs.org/api/stream.html#stream_class_stream_transform) options and methods.
+
 ```js
 var CRC32Stream = require('crc32-stream');
 
@@ -32,9 +36,29 @@ checksum.write('string');
 checksum.end();
 ```
 
-### Instance API
+#### DeflateCRC32Stream
 
-Inherits [Transform Stream](http://nodejs.org/api/stream.html#stream_class_stream_transform) methods.
+Inherits [zlib.DeflateRaw](http://nodejs.org/api/zlib.html#zlib_class_zlib_deflateraw) options and methods.
+
+```js
+var DeflateCRC32Stream = require('crc32-stream').DeflateCRC32Stream;
+
+var source = fs.createReadStream('file.txt');
+var checksum = new DeflateCRC32Stream();
+
+checksum.on('end', function(err) {
+  // do something with checksum.digest() here
+});
+
+// either pipe it
+source.pipe(checksum);
+
+// or write it
+checksum.write('string');
+checksum.end();
+```
+
+### Instance API
 
 #### digest()
 
@@ -47,10 +71,6 @@ Returns the hexadecimal representation of the checksum digest. (ie E81722F0)
 #### size()
 
 Returns the raw size/length of passed-through data.
-
-### Instance Options
-
-Inherits [Transform Stream](http://nodejs.org/api/stream.html#stream_class_stream_transform) options.
 
 ## Things of Interest
 

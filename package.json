@@ -20,7 +20,7 @@
       "url": "https://github.com/ctalkington/node-crc32-stream/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "lib/crc32-stream.js",
+  "main": "lib/index.js",
   "engines": {
     "node": ">= 0.8.0"
   },
