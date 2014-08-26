@@ -68,9 +68,11 @@ Returns the checksum digest in unsigned form.
 
 Returns the hexadecimal representation of the checksum digest. (ie E81722F0)
 
-#### size()
+#### size(compressed)
 
 Returns the raw size/length of passed-through data.
+
+If `compressed` is `true`, it returns compressed length instead. (DeflateCRC32Stream)
 
 ## Things of Interest
 
