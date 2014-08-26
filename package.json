@@ -1,6 +1,6 @@
 {
   "name": "crc32-stream",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "a streaming CRC32 checksumer",
   "homepage": "https://github.com/ctalkington/node-crc32-stream",
   "author": {
