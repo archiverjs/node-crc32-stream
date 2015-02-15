@@ -1,4 +1,4 @@
-# crc32-stream v0.3.1 [![Build Status](https://travis-ci.org/ctalkington/node-crc32-stream.svg?branch=master)](https://travis-ci.org/ctalkington/node-crc32-stream)
+# crc32-stream v0.3.1 [![Build Status](https://travis-ci.org/archiverjs/node-crc32-stream.svg?branch=master)](https://travis-ci.org/archiverjs/node-crc32-stream)
 
 crc32-stream is a streaming CRC32 checksumer. It uses [buffer-crc32](https://www.npmjs.org/package/buffer-crc32) behind the scenes to reliably handle binary data and fancy character sets. Data is passed through untouched.
 
@@ -10,7 +10,7 @@ crc32-stream is a streaming CRC32 checksumer. It uses [buffer-crc32](https://www
 npm install crc32-stream --save
 ```
 
-You can also use `npm install https://github.com/ctalkington/node-crc32-stream/archive/master.tar.gz` to test upcoming versions.
+You can also use `npm install https://github.com/archiverjs/node-crc32-stream/archive/master.tar.gz` to test upcoming versions.
 
 ### Usage
 
@@ -76,6 +76,6 @@ If `compressed` is `true`, it returns compressed length instead. (DeflateCRC32St
 
 ## Things of Interest
 
-- [Changelog](https://github.com/ctalkington/node-crc32-stream/releases)
-- [Contributing](https://github.com/ctalkington/node-crc32-stream/blob/master/CONTRIBUTING.md)
-- [MIT License](https://github.com/ctalkington/node-crc32-stream/blob/master/LICENSE-MIT)
+- [Changelog](https://github.com/archiverjs/node-crc32-stream/releases)
+- [Contributing](https://github.com/archiverjs/node-crc32-stream/blob/master/CONTRIBUTING.md)
+- [MIT License](https://github.com/archiverjs/node-crc32-stream/blob/master/LICENSE-MIT)
