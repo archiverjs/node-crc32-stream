@@ -14,7 +14,8 @@ describe('CRC32Stream', function() {
     var deadend = new DeadEndStream();
 
     checksum.on('end', function() {
-      assert.equal(checksum.digest(), 3893830384);
+      assert.equal(checksum.digest().readUInt32BE(0), 3893830384);
+      assert.equal(checksum.digest('hex'), 'e81722f0');
       assert.equal(checksum.hex(), 'E81722F0');
       assert.equal(checksum.size(), 16384);
       done();
@@ -29,7 +30,7 @@ describe('CRC32Stream', function() {
     var deadend = new DeadEndStream();
 
     checksum.on('end', function() {
-      assert.equal(checksum.digest(), 0);
+      assert.equal(checksum.digest().readUInt32BE(0), 0);
       done();
     });
 
