@@ -1,5 +1,9 @@
 ## Changelog
 
+**3.0.0-pre** — <small>_June 8, 2018_</small> — [Diff](https://github.com/archiverjs/node-crc32-stream/compare/2.0.0...3.0.0)
+
+- remove node v0.10 and v0.12 support
+
 **2.0.0** — <small>_February 13, 2017_</small> — [Diff](https://github.com/archiverjs/node-crc32-stream/compare/1.0.1...2.0.0)
 
 - adopt nodejs core Hash API (GH #4)
