@@ -1,4 +1,7 @@
 /*global before,describe,it */
+
+'use strict';
+
 var assert = require('chai').assert;
 
 var helpers = require('./helpers');

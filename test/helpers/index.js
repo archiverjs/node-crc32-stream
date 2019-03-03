@@ -1,3 +1,5 @@
+'use strict';
+
 var crypto = require('crypto');
 var fs = require('fs');
 var inherits = require('util').inherits;
