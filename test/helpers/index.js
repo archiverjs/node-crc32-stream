@@ -2,11 +2,10 @@
 
 const crypto = require('crypto');
 const fs = require('fs');
-const inherits = require('util').inherits;
+const {inherits} = require('util');
 
-const Stream = require('stream').Stream;
-const Readable = require('readable-stream').Readable;
-const Writable = require('readable-stream').Writable;
+const {Stream} = require('stream');
+const {Readable, Writable}  = require('readable-stream');
 
 function adjustDateByOffset(d, offset) {
   d = (d instanceof Date) ? d : new Date();

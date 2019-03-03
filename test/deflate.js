@@ -2,11 +2,9 @@
 
 'use strict';
 
-const assert = require('chai').assert;
+const {assert} = require('chai');
 
-const helpers = require('./helpers');
-const BinaryStream = helpers.BinaryStream;
-const DeadEndStream = helpers.DeadEndStream;
+const {BinaryStream, DeadEndStream} = require('./helpers');
 
 const DeflateCRC32Stream = require('../lib/deflate-crc32-stream.js');
 
