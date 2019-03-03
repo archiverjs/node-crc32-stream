@@ -17,10 +17,10 @@ You can also use `npm install https://github.com/archiverjs/node-crc32-stream/ar
 Inherits [Transform Stream](http://nodejs.org/api/stream.html#stream_class_stream_transform) options and methods.
 
 ```js
-var CRC32Stream = require('crc32-stream');
+const CRC32Stream = require('crc32-stream');
 
-var source = fs.createReadStream('file.txt');
-var checksum = new CRC32Stream();
+const source = fs.createReadStream('file.txt');
+const checksum = new CRC32Stream();
 
 checksum.on('end', function(err) {
   // do something with checksum.digest() here
@@ -39,10 +39,10 @@ checksum.end();
 Inherits [zlib.DeflateRaw](http://nodejs.org/api/zlib.html#zlib_class_zlib_deflateraw) options and methods.
 
 ```js
-var DeflateCRC32Stream = require('crc32-stream').DeflateCRC32Stream;
+const {DeflateCRC32Stream} = require('crc32-stream');
 
-var source = fs.createReadStream('file.txt');
-var checksum = new DeflateCRC32Stream();
+const source = fs.createReadStream('file.txt');
+const checksum = new DeflateCRC32Stream();
 
 checksum.on('end', function(err) {
   // do something with checksum.digest() here
