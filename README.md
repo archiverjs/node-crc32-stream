@@ -17,7 +17,7 @@ You can also use `npm install https://github.com/archiverjs/node-crc32-stream/ar
 Inherits [Transform Stream](http://nodejs.org/api/stream.html#stream_class_stream_transform) options and methods.
 
 ```js
-const CRC32Stream = require('crc32-stream');
+const {CRC32Stream} = require('crc32-stream');
 
 const source = fs.createReadStream('file.txt');
 const checksum = new CRC32Stream();
