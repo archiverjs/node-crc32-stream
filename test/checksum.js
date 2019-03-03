@@ -2,19 +2,19 @@
 
 'use strict';
 
-var assert = require('chai').assert;
+const assert = require('chai').assert;
 
-var helpers = require('./helpers');
-var BinaryStream = helpers.BinaryStream;
-var DeadEndStream = helpers.DeadEndStream;
+const helpers = require('./helpers');
+const BinaryStream = helpers.BinaryStream;
+const DeadEndStream = helpers.DeadEndStream;
 
-var CRC32Stream = require('../lib/crc32-stream.js');
+const CRC32Stream = require('../lib/crc32-stream.js');
 
 describe('CRC32Stream', function() {
   it('should checksum data while passing through data', function(done) {
-    var binary = new BinaryStream(1024 * 16);
-    var checksum = new CRC32Stream();
-    var deadend = new DeadEndStream();
+    const binary = new BinaryStream(1024 * 16);
+    const checksum = new CRC32Stream();
+    const deadend = new DeadEndStream();
 
     checksum.on('end', function() {
       assert.equal(checksum.digest().readUInt32BE(0), 3893830384);
@@ -29,8 +29,8 @@ describe('CRC32Stream', function() {
   });
 
   it('should gracefully handle having no data chunks passed to it', function(done) {
-    var checksum = new CRC32Stream();
-    var deadend = new DeadEndStream();
+    const checksum = new CRC32Stream();
+    const deadend = new DeadEndStream();
 
     checksum.on('end', function() {
       assert.equal(checksum.digest().readUInt32BE(0), 0);
