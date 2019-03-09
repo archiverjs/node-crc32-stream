@@ -1,10 +1,10 @@
-var crypto = require('crypto');
-var fs = require('fs');
-var inherits = require('util').inherits;
+'use strict';
 
-var Stream = require('stream').Stream;
-var Readable = require('readable-stream').Readable;
-var Writable = require('readable-stream').Writable;
+const crypto = require('crypto');
+const {WriteStream} = require('fs');
+
+const {Stream} = require('stream');
+const {Readable, Writable}  = require('readable-stream');
 
 function adjustDateByOffset(d, offset) {
   d = (d instanceof Date) ? d : new Date();
@@ -21,9 +21,9 @@ function adjustDateByOffset(d, offset) {
 module.exports.adjustDateByOffset = adjustDateByOffset;
 
 function binaryBuffer(n) {
-  var buffer = Buffer.allocUnsafe(n);
+  const buffer = Buffer.allocUnsafe(n);
 
-  for (var i = 0; i < n; i++) {
+  for (let i = 0; i < n; i++) {
     buffer.writeUInt8(i&255, i);
   }
 
@@ -32,62 +32,52 @@ function binaryBuffer(n) {
 
 module.exports.binaryBuffer = binaryBuffer;
 
-function BinaryStream(size, options) {
-  Readable.call(this, options);
+class BinaryStream extends Readable {
+  constructor(size, options) {
+    super(size, options);
 
-  var buf = Buffer.allocUnsafe(size);
+    const buf = Buffer.allocUnsafe(size);
 
-  for (var i = 0; i < size; i++) {
-    buf.writeUInt8(i&255, i);
+    for (let i = 0; i < size; i++) {
+      buf.writeUInt8(i&255, i);
+    }
+
+    this.push(buf);
+    this.push(null);
   }
 
-  this.push(buf);
-  this.push(null);
+  _read(size) {}
 }
-
-inherits(BinaryStream, Readable);
-
-BinaryStream.prototype._read = function(size) {};
 
 module.exports.BinaryStream = BinaryStream;
 
-function DeadEndStream(options) {
-  Writable.call(this, options);
+class DeadEndStream extends Writable {
+  _write(chuck, encoding, callback) {
+    callback();
+  }
 }
-
-inherits(DeadEndStream, Writable);
-
-DeadEndStream.prototype._write = function(chuck, encoding, callback) {
-  callback();
-};
 
 module.exports.DeadEndStream = DeadEndStream;
 
-function fileBuffer(filepath) {
-  return fs.readFileSync(filepath);
-}
+class WriteHashStream extends WriteStream {
+  constructor(path, options) {
+    super(path, options);
 
-module.exports.fileBuffer = fileBuffer;
+    this.hash = crypto.createHash('sha1');
+    this.digest = null;
 
-function WriteHashStream(path, options) {
-  fs.WriteStream.call(this, path, options);
-
-  this.hash = crypto.createHash('sha1');
-  this.digest = null;
-
-  this.on('close', function() {
-    this.digest = this.hash.digest('hex');
-  });
-}
-
-inherits(WriteHashStream, fs.WriteStream);
-
-WriteHashStream.prototype.write = function(chunk) {
-  if (chunk) {
-    this.hash.update(chunk);
+    this.on('close', function() {
+      this.digest = this.hash.digest('hex');
+    });
   }
 
-  return fs.WriteStream.prototype.write.call(this, chunk);
-};
+  write(chunk) {
+    if (chunk) {
+      this.hash.update(chunk);
+    }
+
+    return super.write(chunk);
+  }
+}
 
 module.exports.WriteHashStream = WriteHashStream;
