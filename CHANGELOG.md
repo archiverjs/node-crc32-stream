@@ -1,5 +1,9 @@
 ## Changelog
 
+**3.0.1** — <small>_August 2, 2019_</small> — [Diff](https://github.com/archiverjs/node-crc32-stream/compare/3.0.0...3.0.1)
+
+- update dependencies
+
 **3.0.0** — <small>_April 29, 2019_</small> — [Diff](https://github.com/archiverjs/node-crc32-stream/compare/2.0.0...3.0.0)
 
 - Require Node.js 6.9, update dependencies, use modern JS syntax (GH #10)
