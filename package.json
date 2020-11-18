@@ -26,7 +26,7 @@
     "test": "mocha --reporter dot"
   },
   "dependencies": {
-    "crc": "^3.4.4",
+    "crc-32": "^1.2.0",
     "readable-stream": "^3.4.0"
   },
   "devDependencies": {

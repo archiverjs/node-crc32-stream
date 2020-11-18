@@ -3,6 +3,7 @@
 'use strict';
 
 const {assert} = require('chai');
+const crc32 = require('crc-32');
 
 const {BinaryStream, DeadEndStream} = require('./helpers');
 
@@ -24,6 +25,23 @@ describe('CRC32Stream', function() {
 
     checksum.pipe(deadend);
     binary.pipe(checksum);
+  });
+  
+  it('should have same checksum when bytes written together or separately', function(done) {
+    const checksum = new CRC32Stream();
+    const deadend = new DeadEndStream();
+    
+    const expectedChecksumValue = crc32.buf([157, 10, 217, 109, 100, 200, 300]) >>> 0;
+
+    checksum.on('end', function() {
+      assert.equal(checksum.digest().readUInt32BE(0), expectedChecksumValue);
+      done();
+    });
+    
+    checksum.write(Buffer.from([157, 10, 217, 109]));
+    checksum.write(Buffer.from([100, 200, 300]));
+    checksum.end();
+    checksum.pipe(deadend);
   });
 
   it('should gracefully handle having no data chunks passed to it', function(done) {
