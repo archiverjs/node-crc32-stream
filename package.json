@@ -16,6 +16,7 @@
   },
   "license": "MIT",
   "main": "lib/index.js",
+  "types": "index.d.ts",
   "files": [
     "lib"
   ],
@@ -30,6 +31,7 @@
     "readable-stream": "^3.4.0"
   },
   "devDependencies": {
+    "@types/node": "^10.0.0",
     "chai": "^4.0.0",
     "mocha": "^9.0.2"
   },
