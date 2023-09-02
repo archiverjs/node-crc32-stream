@@ -1,6 +1,6 @@
 {
   "name": "crc32-stream",
-  "version": "4.0.3",
+  "version": "5.0.0",
   "description": "a streaming CRC32 checksumer",
   "homepage": "https://github.com/archiverjs/node-crc32-stream",
   "author": {
