@@ -1,6 +1,6 @@
 ## Changelog
 
-**5.0.0-wip** — <small>_September X, 2023_</small> — [Diff](https://github.com/archiverjs/node-crc32-stream/compare/4.0.3...5.0.0)
+**5.0.0** — <small>_September 2, 2023_</small> — [Diff](https://github.com/archiverjs/node-crc32-stream/compare/4.0.3...5.0.0)
 
 **4.0.3** — <small>_September 2, 2023_</small> — [Diff](https://github.com/archiverjs/node-crc32-stream/compare/4.0.2...4.0.3)
 
