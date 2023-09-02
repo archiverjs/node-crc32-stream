@@ -30,7 +30,7 @@
     "readable-stream": "^3.4.0"
   },
   "devDependencies": {
-    "chai": "4.3.4",
+    "chai": "4.3.8",
     "mocha": "9.0.2"
   },
   "keywords": [
