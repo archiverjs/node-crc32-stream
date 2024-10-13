@@ -39,8 +39,5 @@
     "crc32",
     "stream",
     "checksum"
-  ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  }
+  ]
 }
