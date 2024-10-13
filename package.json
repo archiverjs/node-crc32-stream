@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "chai": "4.4.1",
-    "mocha": "10.3.0"
+    "mocha": "10.7.3"
   },
   "keywords": [
     "crc32-stream",
