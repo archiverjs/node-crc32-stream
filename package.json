@@ -15,12 +15,13 @@
     "url": "https://github.com/archiverjs/node-crc32-stream/issues"
   },
   "license": "MIT",
-  "main": "lib/index.js",
+  "type": "module",
+  "exports": "./lib/index.js",
   "files": [
     "lib"
   ],
   "engines": {
-    "node": ">= 14"
+    "node": ">=18"
   },
   "scripts": {
     "test": "mocha --reporter dot"
@@ -30,7 +31,7 @@
     "readable-stream": "^4.0.0"
   },
   "devDependencies": {
-    "chai": "4.5.0",
+    "chai": "^5.1.1",
     "mocha": "10.7.3"
   },
   "keywords": [
