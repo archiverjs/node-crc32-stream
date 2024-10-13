@@ -17,12 +17,12 @@ You can also use `npm install https://github.com/archiverjs/node-crc32-stream/ar
 Inherits [Transform Stream](http://nodejs.org/api/stream.html#stream_class_stream_transform) options and methods.
 
 ```js
-const {CRC32Stream} = require('crc32-stream');
+const { CRC32Stream } = require("crc32-stream");
 
-const source = fs.createReadStream('file.txt');
+const source = fs.createReadStream("file.txt");
 const checksum = new CRC32Stream();
 
-checksum.on('end', function(err) {
+checksum.on("end", function (err) {
   // do something with checksum.digest() here
 });
 
@@ -30,7 +30,7 @@ checksum.on('end', function(err) {
 source.pipe(checksum);
 
 // or write it
-checksum.write('string');
+checksum.write("string");
 checksum.end();
 ```
 
@@ -39,12 +39,12 @@ checksum.end();
 Inherits [zlib.DeflateRaw](http://nodejs.org/api/zlib.html#zlib_class_zlib_deflateraw) options and methods.
 
 ```js
-const {DeflateCRC32Stream} = require('crc32-stream');
+const { DeflateCRC32Stream } = require("crc32-stream");
 
-const source = fs.createReadStream('file.txt');
+const source = fs.createReadStream("file.txt");
 const checksum = new DeflateCRC32Stream();
 
-checksum.on('end', function(err) {
+checksum.on("end", function (err) {
   // do something with checksum.digest() here
 });
 
@@ -52,7 +52,7 @@ checksum.on('end', function(err) {
 source.pipe(checksum);
 
 // or write it
-checksum.write('string');
+checksum.write("string");
 checksum.end();
 ```
 
